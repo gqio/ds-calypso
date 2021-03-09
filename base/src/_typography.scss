@@ -1,0 +1,117 @@
+$default-font-color: map-get($grey, 800);
+body {
+  font-family: $font-family;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
+  color: map-get($grey, 800);
+}
+
+.medium-text {
+  /* regular text */
+  font-size: 1.6rem;
+  font-weight: 300;
+  line-height: 1.9rem;
+  color: #424242; // var(--font-color, #{$default-font-color});
+}
+
+.small-text {
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.4rem;
+  color: #424242; // var(--font-color, #{$default-font-color});
+}
+
+h1, .section-title {
+  font-size: 1.8rem;
+  line-height: 2.1rem;
+  color: #424242; // var(--font-color, #{$default-font-color});
+  font-weight: bold;
+}
+
+.widget-title {
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+  color: #424242; // var(--font-color, #{$default-font-color});
+  font-weight: 500;
+}
+
+.modal-title {
+  font-size: 1.8rem;
+  line-height: 2.1rem;
+  font-weight: normal;
+  color: #424242; // var(--font-color, #{$default-font-color});
+}
+
+h2, .subtitle {
+  font-size: 1.8rem;
+  line-height: 2.1rem;
+  color: #424242; // var(--font-color, #{$default-font-color});
+  font-weight: 500;
+}
+
+h3, .section-divider {
+  font-size: 1.6rem;
+  line-height: 1.9rem;
+  color: #424242; // var(--font-color, #{$default-font-color});
+  font-weight: 500;
+}
+
+h4, .label, .table-header, .tab-text {
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+  color: #424242; // var(--font-color, #{$default-font-color});
+  font-weight: 500;
+}
+
+.input-text {
+  font-weight: normal;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  display: flex;
+  align-items: flex-end;
+  color: map-get($grey, 900);
+}
+
+.input-label {
+  font-weight: normal;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
+  display: flex;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.54); // var(--font-muted, #{$default-font-color});
+}
+
+.button {
+  font-weight: normal;
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+  color: $black;
+}
+
+.floating-label {
+  font-weight: normal;
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+  color: rgba(0, 0, 0, 0.54); // var(--font-muted, #{$default-font-color});
+}
+
+.alert-text {
+  font-weight: normal;
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+  color: $black;
+}
+
+.table-cell {
+  font-weight: normal;
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+  color: #424242; // var(--font-color, #{$default-font-color});
+}
+
+.tag-label {
+  font-weight: 500;
+  font-size: 1.2rem;
+  line-height: 1.3rem;
+  color: #424242; // var(--font-color, #{$default-font-color});
+}

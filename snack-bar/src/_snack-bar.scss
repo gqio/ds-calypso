@@ -1,0 +1,18 @@
+/*** Material SnackBars ***/
+::ng-deep .mat-snack-bar-container {
+  font-size: 1.4rem;
+  color: map-get($grey, 800);
+  padding: 1.4rem 4.4rem 1.4rem 1.4rem;
+  max-width: 50vw;
+  background: map-get($primary, 100);
+
+  &.success {
+    background: map-get($success, 500);
+  }
+  &.warning {
+    background: map-get($accent, 500);
+  }
+  &.error {
+    background: map-get($error, 500);
+  }
+}

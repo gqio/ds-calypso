@@ -1,0 +1,57 @@
+/*** Material Autocomplete ***/
+.mat-form-field {
+  &.mat-focused {
+    .mat-form-field-underline,
+    .mat-form-field-underline .mat-form-field-ripple {
+      background-color: #227ae2; // var(--primary-bright);
+    }
+  }
+
+  input[aria-autocomplete] {
+    width: 90%;
+  }
+
+  .mat-chip-list-disabled,
+  input[aria-autocomplete]:disabled,
+  input[aria-autocomplete].disabled {
+    & + mat-autocomplete:after {
+      color: rgba(0, 0, 0, 0.38);
+    }
+  }
+
+  mat-autocomplete {
+    &:after {
+      font-family: "Material Icons";
+      content: "\e5c5";
+      position: absolute;
+      top: 0.5rem;
+      right: -3px;
+      font-size: 24px;
+      color: #227ae2; // var(--primary-bright);
+    }
+  }
+}
+
+::ng-deep .mat-autocomplete-panel {
+  mat-option {
+    padding: 0px 1rem;
+    height: 4rem;
+    line-height: 4rem;
+
+    &:hover,
+    &.mat-selected {
+      background-color: #f2f7fd; // var(--primary-6) !important;
+      .mat-option-text {
+        color: #0e45b4; // var(--font-color-bright);
+      }
+    }
+  }
+
+  .mat-option-text {
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    color: #424242; // var(--font-color);
+  }
+}

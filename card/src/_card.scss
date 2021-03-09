@@ -1,0 +1,9 @@
+/*** Material Card ***/
+.mat-card {
+  background: #ffffff !important; // var(--widget-background) !important;
+  color: #424242 !important; // var(--font-color) !important;
+
+  .mat-card-content {
+    color: rgba(0, 0, 0, 0.54); // var(--font-muted);
+  }
+}

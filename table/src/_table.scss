@@ -1,0 +1,98 @@
+/*** Material Table ***/
+.cal-table {
+  mat-header-row,
+  tr[mat-header-row],
+  mat-header-row.mat-header-row {
+    background: linear-gradient(90.55deg, #1b6ed0 0.32%, #043f83 99.49%); // var(--table-header);
+    min-height: 3.1rem;
+    height: 3.1rem;
+    font-family: $font-family;
+    color: map-get($grey, 800);
+    font-size: 1.4rem;
+
+    mat-header-cell.mat-header-cell,
+    th[mat-header-cell] {
+      color: $white;
+      font-size: 1.4rem;
+
+      .mat-sort-header-arrow,
+      .mat-sort-header-button {
+        color: $white;
+      }
+      &.mat-table-sticky {
+        background: none;
+      }
+    }
+  }
+
+  mat-row.mat-row {
+    height: 4.5rem;
+
+    &:hover {
+      background-color: #e4effc; // var(--primary-12);
+    }
+  }
+
+  mat-cell,
+  .mat-cell {
+    &.justified-right {
+      justify-content: flex-end;
+    }
+
+    &.justified-left {
+      justify-content: flex-start;
+    }
+
+    &.justified-center {
+      justify-content: center;
+    }
+  }
+
+  &.flexible-cells {
+    mat-row.mat-row {
+      height: auto;
+      min-height: 4.5rem;
+    }
+
+    mat-header-row mat-header-cell {
+      padding: 0px 5px;
+    }
+
+    mat-cell,
+    .mat-cell {
+      word-wrap: break-word;
+      word-break: break-word;
+      padding: 0px 5px;
+    }
+  }
+}
+
+@mixin mat-table-columns($columns) {
+  .mat-column- {
+    @each $colName, $props in $columns {
+      $width: map-get($props, "width");
+
+      &#{$colName} {
+        @if map-has-key($props, "width") {
+          flex: $width;
+          min-width: $width;
+          max-width: $width;
+          width: $width;
+          flex-grow: initial;
+        }
+
+        @if map-has-key($props, "color") {
+          color: map-get($props, "color");
+        }
+      }
+    }
+  }
+}
+
+@mixin mat-table-columns-for-table($table, $columns) {
+  mat-table.mat-table, table[mat-table] {
+    &#{$table} {
+      @include mat-table-columns($columns);
+    }
+  }
+}

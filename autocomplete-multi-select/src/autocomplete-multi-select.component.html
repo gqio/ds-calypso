@@ -1,0 +1,59 @@
+<div class="cal-autocomplete-multi-select" #multiSelect>
+	<form [formGroup]="filterForm" autocomplete="off" [class.form-disabled]="isDisabled">
+		<mat-form-field (click)="openMenu(); $event.stopPropagation();" *ngIf="!chips" [attr.title]="display">
+			<div class="display-container">
+				<div *ngIf="!menuOpened && !(anySelected && treeView)" class="display-text"
+					(click)="openMenu(); $event.stopPropagation();">{{display}}
+				</div>
+				<input #autocomplete matInput formControlName="filterControl" placeholder="{{placeholder}}"
+                    class="autocomplete-text" [class.displayTextInput]="!menuOpened" [class.long-text]="longText">
+            </div>
+		</mat-form-field>
+
+		<mat-form-field (click)="openMenu(); $event.stopPropagation();" *ngIf="chips"
+			[class.notEmpty]="visibleSelectedItems.length > 0">
+			<mat-chip-list #chipList>
+				<div #selectedChips class="selected-chip-list" [class.hideMenu]="menuOpened">
+					<mat-chip *ngFor="let item of visibleSelectedItems" [style.max-width.px]="chipWidth" [removable]="true"
+						(click)="openMenu(); $event.stopPropagation();" (removed)="removeChip(item)">
+						<span class="chip-text">{{itemAsText(item)}}</span>
+						<mat-icon matChipRemove class="cancel-icon">cancel</mat-icon>
+					</mat-chip>
+				</div>
+				<input matInput placeholder="{{placeholder}}" #autocomplete formControlName="filterControl"
+                    [matChipInputFor]="chipList" [class.muted]="!menuOpened" (matChipInputTokenEnd)="add($event)"
+                    [matChipInputAddOnBlur]="true">
+            </mat-chip-list>
+		</mat-form-field>
+	</form>
+	<div class="menu-trigger" [matMenuTriggerFor]="menu" (menuClosed)="onMenuClosed()"></div>
+
+
+	<mat-menu #menu="matMenu" class="cal-autocomplete-multi-select-menu" [class]="menuPanelClass" [hasBackdrop]="false">
+		<div *ngIf="enableAnyMode" class="any-option">
+			<button mat-menu-item (click)="toggleAny()">
+                <span class="any-label" [class.selected]="anySelected">{{ anyLabel }}</span>
+            </button>
+			<div class='search-input-container'>
+				<mat-divider class="divider"></mat-divider>
+			</div>
+		</div>
+		<div *ngIf="!treeView" class="flat-menu">
+			<div *ngIf="selectedItems && !searching">
+				<button mat-menu-item *ngFor="let item of selectedItems"
+                    (click)="$event.stopPropagation(); unselect(item)">
+                    <mat-checkbox [checked]="true" color="primary">{{itemAsText(item)}}</mat-checkbox>
+                </button>
+			</div>
+			<div class="divider" *ngIf="selectedItems && selectedItems.length > 0 && !searching"></div>
+			<button mat-menu-item *ngFor="let item of filteredItems" (click)="$event.stopPropagation(); select(item)">
+                <mat-checkbox [checked]="false" color="primary">{{itemAsText(item)}}</mat-checkbox>
+            </button>
+			<div class="no-items" *ngIf="filteredItems.length === 0">No elements available</div>
+		</div>
+		<div *ngIf="treeView" class="tree-container">
+			<cal-collapsable-tree [items]="filteredItems" (itemSelected)="onTreeItemSelected($event)"
+				[displayField]="displayField"></cal-collapsable-tree>
+		</div>
+	</mat-menu>
+</div>

@@ -1,0 +1,18 @@
+<div *ngFor="let item of listItems" class="cal-collapsable-tree">
+	<div *ngIf="item.visible" class="node">
+		<div class="node-title">
+			<mat-icon color="primary" class="expand-icon" *ngIf="item.children && item.children.length"
+				(click)="toggleExpanded($event, item)">
+				{{ item.expanded ? 'expand_less' : 'chevron_right'}}</mat-icon>
+			<div class="node-label" [class.root]="depth === 0" [class.leaf]="!item.children || !item.children.length"
+				[class.selected]="item.selected" [class.disabled]="item.disabled" (click)="selectItem(item)">
+				{{itemAsText(item)}}
+			</div>
+		</div>
+
+		<div *ngIf="item.children && item.children.length" class="node-content" [class.expanded]="item.expanded">
+			<cal-collapsable-tree [items]="item.children" [depth]="depth + 1"
+				(itemSelected)="onNodeItemSelected($event)" [displayField]="displayField"></cal-collapsable-tree>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,17 @@
+<div #container class="cal-resizable-container" [style.width.px]="width" [style.height.px]="height">
+	<div class="content-container">
+		<div class="content" [style.height]="initialHeight">
+			<ng-content></ng-content>
+		</div>
+		<div class="cal-resizable-container-side vertical right-side" *ngIf="horizontal"
+			(mousedown)="onMouseDown($event, SidesType.Right)">
+			<div>
+				<cal-icon icon="{{icon}}" [class.toggle]="toggleMode" (click)="onClick()"></cal-icon>
+			</div>
+		</div>
+	</div>
+	<div class="cal-resizable-container-side bottom-side horizontal" *ngIf="vertical"
+		(mousedown)="onMouseDown($event, SidesType.Bottom)">
+		<cal-icon icon="{{icon}}" [class.toggle]="toggleMode" (click)="onClick()"></cal-icon>
+	</div>
+</div>

@@ -1,0 +1,55 @@
+/*** Material Radio Buttons ***/
+.mat-radio-button .mat-radio-label-content {
+  // label styles
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.mat-radio-button.mat-radio-checked {
+
+  // no color, basic, primary
+  &,
+  &.mat-basic,
+  &.mat-primary {
+    &,
+    &.mat-radio-disabled {
+      .mat-radio-inner-circle {
+        background-color: #227ae2; // var(--primary-bright);
+      }
+      .mat-radio-outer-circle {
+        border-color: #227ae2; // var(--primary-bright);
+      }
+    }
+  }
+
+  // accent
+  &.mat-accent {
+    &,
+    &.mat-radio-disabled {
+      .mat-radio-inner-circle {
+        background-color: #ff9900; // var(--accent-bright);
+      }
+      .mat-radio-outer-circle {
+        border-color: #ff9900; // var(--accent-bright);
+      }
+    }
+  }
+
+  // warn
+  &.mat-warn {
+    &,
+    &.mat-radio-disabled {
+      .mat-radio-inner-circle {
+        background-color: map-get($error, 500);
+      }
+      .mat-radio-outer-circle {
+        border-color: map-get($error, 500);
+      }
+    }
+  }
+
+  // disabled
+  &.mat-radio-disabled {
+    opacity: 0.38;
+  }
+}

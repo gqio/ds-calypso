@@ -1,0 +1,40 @@
+<div class="demo demo1">
+  <h3 class="demo-title">Highest European points</h3>
+  <div class="resizable-container-wrapper container-height">
+    <cal-resizable-container [vertical]="true">
+      <div class="white-bkg">
+        <mat-table class="cal-table" [dataSource]="dataSource1">
+          <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{ element.name }} </mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="height">
+            <mat-header-cell *matHeaderCellDef> Height </mat-header-cell>
+            <mat-cell *matCellDef="let element">
+              {{ element.height }}
+            </mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="country">
+            <mat-header-cell *matHeaderCellDef> Country </mat-header-cell>
+            <mat-cell *matCellDef="let element">
+              {{ element.country }}
+            </mat-cell>
+          </ng-container>
+
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+      </div>
+    </cal-resizable-container>
+  </div>
+
+  <div class="non-resizable-container">
+    <div class="boxes vertical-boxes">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+  </div>
+</div>

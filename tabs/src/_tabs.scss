@@ -1,0 +1,47 @@
+/*** Material Tabs ***/
+.mat-tab-group {
+  ::ng-deep {
+    .mat-tab-label {
+      &:hover,
+      &.mat-tab-label-active {
+        opacity: 1;
+        color: #0e45b4; // var(--font-color-bright);
+        border-bottom: 2px solid #227ae2; // var(--primary-bright);
+        font-weight: normal;
+        font-size: 1.4rem;
+      }
+    }
+
+    .mat-ink-bar {
+      background-color: #227ae2; // var(--primary-bright);
+    }
+
+    .mat-tab-label-container {
+      order: -1;
+    }
+
+    .mat-tab-header-pagination {
+      box-shadow: none;
+
+      .mat-tab-header-pagination-chevron {
+        border-color: #0e45b4; // var(--primary-deep);
+      }
+
+      &.mat-tab-header-pagination-disabled {
+        .mat-tab-header-pagination-chevron {
+          opacity: 0.4;
+        }
+      }
+    }
+  }
+}
+
+.mat-tab-links {
+  .mat-tab-link {
+    color: #424242; // var(--font-color);
+    &.mat-tab-label-active {
+      opacity: 1;
+      color: #0e45b4; // var(--font-color-bright);
+    }
+  }
+}

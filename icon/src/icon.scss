@@ -1,0 +1,34 @@
+// @import "~@calypso-webcore/styles/styles/abstracts/_variables";
+// @import "~@calypso-webcore/styles/styles/abstracts/_mixins";
+@import '../../abstract/src/_mixins.scss';
+@import '../../abstract/src/_variables.scss';
+
+[color="primary"], .cal-icon-mat-icon {
+    @include icon-color(#0e45b4); // var(--primary-deep));
+}
+
+[color="secondary"] .cal-icon-mat-icon {
+    @include icon-color(#ff9900); // var(--accent-bright));
+}
+
+[color="error"] .cal-icon-mat-icon {
+    @include icon-color(#fe5858); // var(--error-bright));
+}
+
+[color="success"] .cal-icon-mat-icon {
+    @include icon-color(#75bc34); // var(--success-bright));
+}
+
+[color="no-color"] .cal-icon-mat-icon {
+    @include icon-color(map-get($grey, 800));
+}
+
+:host {
+    display: inline-flex;
+
+    .mat-icon.disabled {
+        opacity: 0.4;
+        cursor: default;
+    }
+}
+

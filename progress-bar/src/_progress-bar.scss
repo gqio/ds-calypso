@@ -1,0 +1,48 @@
+/* Progress Bar customization */
+@import '../../abstract/src/variables';
+$bar-light-blue: #6AACDE;
+$amber: #FFC107;
+
+.mat-progress-bar.mat-primary {
+    .mat-progress-bar-fill::after {
+        background-color: $bar-light-blue;
+    }
+    .mat-progress-bar-buffer {
+        background-color: map-get($grey, 300);
+    }
+}
+
+.mat-progress-bar-fill::after {
+    background-color: map-get($grey, 800);
+}
+
+.mat-progress-bar-buffer {
+    background-color: map-get($grey, 300);
+}
+
+.mat-progress-bar.mat-accent {
+    .mat-progress-bar-fill::after {
+        background-color: $amber;
+    }
+    .mat-progress-bar-buffer {
+        background-color: map-get($grey, 300);
+    }
+}
+
+.mat-progress-bar.mat-warn {
+    .mat-progress-bar-fill::after {
+        background-color: map-get($accent, 500);
+    }
+    .mat-progress-bar-buffer {
+        background-color: map-get($grey, 300);
+    }
+}
+
+.mat-progress-bar.mat-disabled {
+    .mat-progress-bar-fill::after {
+        background-color: map-get($grey, 300);
+    }
+    .mat-progress-bar-buffer {
+        background-color: map-get($grey, 300);
+    }
+}

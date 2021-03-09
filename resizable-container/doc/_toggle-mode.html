@@ -1,0 +1,51 @@
+<div class="demo demo2">
+  <h3 class="demo-title">
+    Demo with Custom icon, ToggleMode ON, toggle steps: 20,50,80%
+  </h3>
+  <div #parent class="flex-demo vertical-boxes">
+    <div>
+      <cal-resizable-container
+        [vertical]="true"
+        icon="icon-pin"
+        [toggle-mode]="true"
+        [toggle-steps]="[20,50,80]"
+        [parent-ref]="parent"
+      >
+        <div class="white-bkg">
+          <mat-table class="cal-table" [dataSource]="dataSource2">
+            <ng-container matColumnDef="name">
+              <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+              <mat-cell *matCellDef="let element">
+                {{ element.name }}
+              </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="height">
+              <mat-header-cell *matHeaderCellDef> Height </mat-header-cell>
+              <mat-cell *matCellDef="let element">
+                {{ element.height }}
+              </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="country">
+              <mat-header-cell *matHeaderCellDef> Country </mat-header-cell>
+              <mat-cell *matCellDef="let element">
+                {{ element.country }}
+              </mat-cell>
+            </ng-container>
+
+            <mat-header-row
+              *matHeaderRowDef="displayedColumns"
+            ></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+          </mat-table>
+        </div>
+      </cal-resizable-container>
+    </div>
+    <div class="boxes vertical-boxes grow-4">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+  </div>
+</div>

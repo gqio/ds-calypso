@@ -1,0 +1,30 @@
+::ng-deep .monaco-editor {
+  .margin {
+    .margin-view-overlays {
+      & > div {
+        width: 60% !important;
+        border-right: solid 1px map-get($grey, 400);;
+        text-align: center;
+
+        .line-numbers {
+          color: map-get($grey, 500);
+          width: 100% !important;
+          text-align: center;
+        }
+
+        .current-line ~ .line-numbers {
+          background: rgba(196, 196, 196, 0.2);
+        }
+      }
+    }
+  }
+
+  .mtk22 {
+    color: #0e45b4; // var(--font-color-bright);
+  }
+
+  .overflow-guard {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-left: 6px solid #227ae2; // var(--primary-bright);
+  }
+}

@@ -1,0 +1,153 @@
+.mat-form-field {
+  width: 100%;
+}
+
+.full-height-view {
+  height: calc(100vh - 10.1rem);
+}
+
+.base-box {
+  @extend .full-height-view;
+  background: #ffffff; // var(--widget-background);
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+
+  .base-box-header {
+    height: 6rem;
+    padding: 20px 30px;
+    background: #ffffff; // var(--container-header);
+    border-radius: 5px;
+  }
+
+  .base-box-footer {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    height: 6.5rem;
+    border-top: 1px solid map-get($grey, 400);
+    padding: 0px 35px;
+  }
+}
+
+.full-width-card {
+  padding: 0 !important;
+}
+
+.full-width-card mat-card-title {
+  @include H2-Title;
+  @include dark;
+  padding: 2rem;
+  margin-bottom: 0 !important;
+}
+
+.full-width-card mat-card-subtitle {
+  @include H6-body-disabled;
+  @include dark;
+}
+
+.dark {
+  @include dark;
+}
+
+.light {
+  @include light;
+}
+
+.refreshing img {
+  -webkit-animation: spin 1s linear infinite;
+  -moz-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
+}
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.unactive {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+}
+
+.small-icon {
+  width: 1.8rem;
+  height: 1.8rem;
+  object-fit: contain;
+}
+
+.medium-icon {
+  width: 2.2rem;
+  height: 2.2rem;
+  object-fit: contain;
+}
+
+.large-icon {
+  width: 2.8rem;
+  height: 2.8rem;
+  object-fit: contain;
+}
+
+::ng-deep .action-icon {
+  svg g g {
+    stroke: #0e45b4; // var(--primary-deep);
+  }
+}
+
+.middle-align {
+  vertical-align: middle;
+}
+
+.bottom-align {
+  vertical-align: bottom;
+}
+
+.top-align {
+  vertical-align: top;
+}
+
+.left-align {
+  text-align: left;
+}
+
+.right-align {
+  text-align: right;
+}
+
+.center-align {
+  text-align: center;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.visible {
+  opacity: 1 !important;
+}

@@ -1,0 +1,183 @@
+$primary: (
+  50: #e1f6fb,
+  100: #b4e9f4,
+  200: #82daed,
+  300: #50cbe6,
+  400: #2bbfe0,
+  500: #05b4db,
+  600: #04c6ee,
+  700: $bondi-blue,
+  800: #039ccd,
+  900: #018cc4,
+  A100: #ecf9ff,
+  A200: #b9e8ff,
+  A400: #86d8ff,
+  A700: #6dd0ff,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000
+  )
+);
+
+$light-primary: (
+  6: $light-blue-6,
+  8: $night-rider,
+  12: $light-blue-12,
+  100: $light-blue
+);
+
+$success: (
+  300: #74bb34,
+  500: $bright-green,
+  700: $deep-green
+);
+
+$accent: (
+  50: #fff3e0,
+  100: #ffe0b3,
+  200: #ffcc80,
+  300: $light-orange,
+  400: #ffa826,
+  500: $bright-orange,
+  600: #ff9100,
+  700: $deep-orange,
+  800: #ff7c00,
+  900: #ff6b00,
+  A100: #ffffff,
+  A200: #fff7f2,
+  A400: #ffd6bf,
+  A700: #ffc6a6,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #000000,
+    800: #000000,
+    900: #000000,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000
+  )
+);
+
+$error: (
+  50: #ffebee,
+  100: #ffcdd2,
+  200: #ef9a9a,
+  300: #e57373,
+  400: #ef5350,
+  500: $bright-red,
+  600: #e53935,
+  700: $deep-red,
+  800: #c62828,
+  900: #b71c1c,
+  A100: #638cff,
+  A200: #3066ff,
+  A400: #0041fc,
+  A700: #003be3,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000
+  )
+);
+
+.error-hint {
+  color: map-get($error, 500);
+  width: 100%;
+  background-image: url("../icons/light-warning.svg");
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+.dark-theme {
+  // Font
+  --font-color: #eaeaea;
+  --font-color-light: #f2f2f2;
+  --font-color-bright: #{map-get($primary, 500)};
+  --font-muted: #bbbbbb;
+
+  --primary-light: #{map-get($light-primary, 100)};
+  --primary-12: #{map-get($light-primary, 12)};
+  --primary-8: #{map-get($light-primary, 8)};
+  --primary-6: #{map-get($light-primary, 6)};
+  --primary-bright: #{map-get($primary, 500)};
+  --primary-deep: #{map-get($primary, 700)};
+
+  --success-light: #{map-get($success, 300)};
+  --success-bright: #{map-get($success, 500)};
+  --success-deep: #{map-get($success, 700)};
+
+  --accent-light: #{map-get($accent, 300)};
+  --accent-bright: #{map-get($accent, 500)};
+  --accent-deep: #{map-get($accent, 700)};
+
+  --error-light: #{map-get($error, 300)};
+  --error-bright: #{map-get($error, 500)};
+  --error-deep: #{map-get($error, 700)};
+
+  // Sidenav
+  --sidenav-font-color: #eaeaea;
+  --sidenav-secondary: #666666;
+  --sidenav-dividers: #444343;
+  --sidenav-main: rgba(17, 17, 17, 0.8);
+  --sidenav-main-open: #080809;
+  --sidenav-hover: rgba(0, 0, 0, 0.3);
+  --sidenav-background: linear-gradient(167.42deg, #292a2f 0.33%, #151515 99.11%);
+  --sidenav-collapse-btn-background: transparent;
+  --sidenav-collapse-btn-collapsed-background: transparent;
+  --sidenav-collapse-btn-border: #{map-get($accent, 500)};
+  --sidenav-collapse-btn-icon: #{map-get($accent, 500)};
+
+  // Header
+  --header-background: #1c1c1c;
+  --header-service-name: #227ae2; // var(--primary-bright);
+
+  // Containers
+  --main-background: linear-gradient(180deg, #060606 3.8%, rgba(22, 22, 22, 0.97) 47.5%, #0e0e0e 100%);
+  --widget-background: linear-gradient(
+    180deg,
+    rgba(33, 33, 33, 0.7) 0%,
+    rgba(46, 46, 46, 0.7) 34.29%,
+    rgba(36, 36, 36, 0.7) 100%
+  );
+  --container-header: #212121;
+
+  // Table
+  --table-header: linear-gradient(90.55deg, #1b6ed0 0.32%, #043f83 99.49%);
+  --filter-bar-background: #111111;
+  --filter-bar-action-background: #1e1e1e;
+  --filter-bar-box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+
+  --field-underline: #666666;
+
+  @include init-angular-theme($primary, $accent, $error);
+}

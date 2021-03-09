@@ -1,0 +1,39 @@
+<div class="demo">
+  <span class="title">Strings and position controls</span>
+  <div class="double-list-container">
+    <cal-double-list
+      [items]="sItems"
+      [positionControls]="true"
+      [selectedItems]="sSelected"
+      data-cy="first-double-list"
+    ></cal-double-list>
+  </div>
+  <div>
+    <div>Selected Items</div>
+    <ul *ngIf="sSelected.length > 0">
+      <li *ngFor="let item of sSelected">{{item}}</li>
+    </ul>
+    <span *ngIf="sSelected.length === 0">No items selected</span>
+  </div>
+</div>
+<div class="demo">
+  <span class="title">Objects</span>
+  <div class="double-list-container">
+    <cal-double-list
+      [items]="items"
+      [selectedItems]="selected"
+      displayField="name"
+      data-cy="second-double-list"
+    >
+    </cal-double-list>
+  </div>
+  <div>
+    <div>Selected Items</div>
+    <ul *ngIf="selected.length > 0">
+      <li *ngFor="let item of selected">
+        City: {{item.name}} - Population: {{item.population}}
+      </li>
+    </ul>
+    <span *ngIf="selected.length === 0">No items selected</span>
+  </div>
+</div>

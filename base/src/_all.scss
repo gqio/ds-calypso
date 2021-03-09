@@ -1,0 +1,16 @@
+// Angular Material
+@import "~@angular/material/theming";
+
+// Covalent
+@import "~@covalent/core/theming/all-theme";
+
+// Vendors
+@import "~/vendors/src/material-icons.scss";
+
+// // Abstracts
+@import  "../../abstract/src/variables",  "../../abstract/src/mixins";
+
+// // Base
+@import "./base", "./helpers", "./typography", './scrollbar';
+
+@include mat-core();

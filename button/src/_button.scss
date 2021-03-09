@@ -1,0 +1,215 @@
+/*** Material Buttons ***/
+.mat-button-ripple {
+  border-radius: 10rem;
+}
+
+.mat-button {
+  font-family: $font-family;
+  line-height: 1.33;
+
+  span {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.4rem;
+    color: #424242; // var(--font-color);
+  }
+
+  border-radius: 10rem !important;
+  padding: 0.9rem 2rem;
+  min-width: 7vw !important;
+  height: 3.6rem;
+
+  &:disabled {
+    opacity: 0.38;
+  }
+
+  &.mat-primary {
+    border: none;
+    background: #227ae2; // var(--primary-bright);
+
+    span {
+      color: $white;
+    }
+
+    &:hover:not(:disabled) {
+      background-color: #227ae2; // var(--primary-bright);
+      border-color: #227ae2; // var(--primary-bright);
+    }
+
+    &.cal-outline {
+      border: 1px solid #0e45b4; // var(--primary-deep);
+      background-color: transparent;
+
+      span {
+        color: #0e45b4; // var(--primary-deep);
+      }
+
+      &:hover {
+        background-color: map-get($primary, 6);
+
+        &:not(:disabled) {
+          span {
+            color: $white;
+          }
+        }
+      }
+
+      &:disabled {
+        background-color: transparent;
+      }
+    }
+  }
+
+  &.mat-warn {
+    background-color: map-get($error, 500);
+
+    span {
+      color: $white;
+    }
+
+    &:hover:not(:disabled),
+    &:active:not(:disabled) {
+      color: $white;
+      background-color: map-get($error, 700);
+    }
+
+    &.cal-outline {
+      border: 1px solid map-get($error, 700);
+      background-color: $white;
+
+      span {
+        color: map-get($error, 700);
+      }
+
+      &:hover {
+        color: map-get($error, 700);
+        background-color: rgba(map-get($error, 700), 0.1);
+      }
+      &:disabled {
+        background-color: $white;
+      }
+    }
+  }
+
+  &.mat-accent {
+    background-color: #ff9900; // var(--accent-bright);
+    border: none;
+
+    span {
+      color: $white;
+    }
+
+    &:hover:not(:disabled),
+    &:active:not(:disabled) {
+      background-color: #ce7c00; // var(--accent-deep);
+    }
+
+    &.cal-outline {
+      border: 1px solid #ce7c00; // var(--accent-deep);
+      background-color: $white;
+
+      span {
+        color: #ce7c00; // var(--accent-deep);
+      }
+
+      &:hover {
+        background-color: rgba(#ce7c00, 0.1); // rgba(var(--accent-deep), 0.1);
+      }
+
+      &:disabled {
+        background-color: $white;
+      }
+    }
+  }
+
+  &.mat-secondary {
+    border: 1px solid #0e45b4; // var(--primary-deep);
+
+    span {
+      color: #0e45b4; // var(--primary-deep);
+    }
+
+    &:hover:not(:disabled) {
+      background-color: #227ae2; // var(--primary-bright);
+      border-color: #227ae2; // var(--primary-bright);
+
+      span {
+        color: $white;
+      }
+    }
+
+    &:disabled {
+      background-color: transparent;
+    }
+  }
+
+  &.mat-link {
+    border: none;
+
+    span {
+      color: #0e45b4; // var(--primary-deep);
+    }
+
+    &:hover {
+      background-color: map-get($primary, 6);
+    }
+
+    &:disabled,
+    &[disabled] {
+      background-color: transparent;
+      opacity: 0.5;
+    }
+  }
+}
+
+a.link {
+  border: none;
+  color: #0e45b4; // var(--primary-deep);
+
+  span {
+    color: #0e45b4; // var(--primary-deep);
+  }
+
+  &:hover {
+    cursor: pointer;
+    color: map-get($primary, 6);
+  }
+
+  &:disabled,
+  &[disabled] {
+    background-color: transparent;
+    opacity: 0.5;
+    cursor: default;
+    pointer-events: none;
+  }
+}
+
+.mat-icon-button {
+  &.mat-primary {
+    span {
+      color: #0e45b4; // var(--font-color-bright);
+
+      .mat-icon {
+        svg g g,
+        svg g path {
+          stroke: #0e45b4; // var(--font-color-bright);
+        }
+      }
+    }
+  }
+
+  &[disabled] {
+    opacity: 0.5;
+  }
+}
+
+.mat-ripple-element {
+  opacity: 0;
+}
+
+.mat-button .mat-button-focus-overlay,
+.mat-button:hover .mat-button-focus-overlay,
+.mat-button:active .mat-button-focus-overlay {
+  opacity: 0;
+  background: none;
+}

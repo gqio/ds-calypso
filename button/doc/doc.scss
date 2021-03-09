@@ -1,0 +1,9 @@
+[data-story-id] {
+  width: 490px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+ .mat-button-base {
+    margin: 8px 8px 8px 0;
+  }
+}

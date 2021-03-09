@@ -1,0 +1,15 @@
+{
+ "name": "@divriots-test/ds-calypso",
+ "version": "0.0.5",
+ "description": "",
+ "license": "ISC",
+ "type": "module",
+ "homepage": "{{ homepage }}",
+ "scripts": {
+  "serve": "dsd-cli serve 4QUyz7aj9LLPRTvqOiMe --open"
+ },
+ "devDependencies": {
+  "dsd-cli": "latest"
+ },
+ "dependencies": {}
+}

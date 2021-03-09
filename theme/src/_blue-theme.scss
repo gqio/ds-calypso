@@ -1,0 +1,68 @@
+@import "../../abstract/src/variables";
+
+.error-hint {
+  color: map-get($error, 500);
+  width: 100%;
+  background-image: url("../../icons/light-warning.svg");
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+.blue-theme {
+  // Font
+  --font-color: #{map-get($grey, 800)};
+  --font-color-light: #{map-get($grey, 600)};
+  --font-color-bright: #{map-get($primary, 700)};
+  --font-muted: rgba(0, 0, 0, 0.54);
+
+  --primary-light: #{map-get($light-primary, 100)};
+  --primary-12: #{map-get($light-primary, 12)};
+  --primary-8: #{map-get($light-primary, 8)};
+  --primary-6: #{map-get($light-primary, 6)};
+  --primary-bright: #{map-get($primary, 500)};
+  --primary-deep: #{map-get($primary, 700)};
+
+  --success-light: #{map-get($success, 300)};
+  --success-bright: #{map-get($success, 500)};
+  --success-deep: #{map-get($success, 700)};
+
+  --accent-light: #{map-get($accent, 300)};
+  --accent-bright: #{map-get($accent, 500)};
+  --accent-deep: #{map-get($accent, 700)};
+
+  --error-light: #{map-get($error, 300)};
+  --error-bright: #{map-get($error, 500)};
+  --error-deep: #{map-get($error, 700)};
+
+  // Sidenav
+  --sidenav-font-color: #FFF;
+  --sidenav-secondary: #0662b5;
+  --sidenav-dividers: #3073c5;
+  --sidenav-main: rgba(7, 32, 83, 0.3);
+  --sidenav-main-open: #043063;
+  --sidenav-hover: #042346;
+  --sidenav-background: linear-gradient(178.66deg, #236abe 0.33%, #001e38 99.11%);
+  --sidenav-collapse-btn-background: #0c3365;
+  --sidenav-collapse-btn-collapsed-background: #0c3365;
+  --sidenav-collapse-btn-border: #0c3365;
+  --sidenav-collapse-btn-icon: #{$white};
+
+  // Header
+  --header-background: #fefefe;
+  --header-service-name: #0662b5;
+
+  // Containers
+  --main-background: linear-gradient(to bottom, #ffffff, #f2f2f2);
+  --widget-background: #{$white};
+  --container-header: #{$white};
+
+  // Table
+  --table-header: linear-gradient(90.55deg, #1b6ed0 0.32%, #043f83 99.49%);
+  --filter-bar-background: #{map-get($light-primary, 8)};
+  --filter-bar-action-background: #{map-get($light-primary, 100)};
+  --filter-bar-box-shadow: 0 0 6px rgba(35, 123, 227, 0.65);
+
+  --field-underline: rgba(0, 0, 0, 0.38);
+
+  @include init-angular-theme($primary, $accent, $error);
+}

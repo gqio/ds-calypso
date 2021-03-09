@@ -1,0 +1,17 @@
+/*** Material Chips ***/
+.mat-chip {
+  &.mat-primary.mat-standard-chip {
+    background-color: #edf4fd; // var(--primary-8);
+    color: #0e45b4; // var(--primary-deep);
+    .mat-icon {
+      color: #0e45b4; // var(--primary-deep);
+      opacity: 1;
+      &:hover {
+        opacity: 1 !important;
+      }
+    }
+  }
+}
+.mat-standard-chip::after {
+  display: none;
+}

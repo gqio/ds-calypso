@@ -1,0 +1,10 @@
+<td-expansion-panel disableRipple [expand]="expand" data-cy="cal-accordion">
+	<ng-template td-expansion-panel-header>
+		<div class="accordion-header">
+			<ng-content select="[cal-accordion-title]"></ng-content>
+		</div>
+	</ng-template>
+	<div class="accordion-content">
+		<ng-content select="[cal-accordion-content]"></ng-content>
+	</div>
+</td-expansion-panel>
